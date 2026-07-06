@@ -1,0 +1,292 @@
+/* ==========================================================================
+   InfoJakarta Modal Popup Stylesheet
+   Contains Overlay Backdrop, Modal Layout Containers, and Detail Content Grids.
+   Theme: Minimalist Orange & White (Borders over Shadows)
+   ========================================================================== */
+
+/* 1. Modal Overlay Backdrop */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(31, 41, 55, 0.35); /* Elegant translucent dimming */
+    backdrop-filter: blur(3px);                /* Soft background defocus */
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--transition-fast), visibility var(--transition-fast);
+}
+
+.modal-overlay.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* 2. Modal Main Window */
+.modal-container {
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border);
+    border-radius: var(--border-radius);
+    width: 100%;
+    max-width: 850px;
+    max-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+    transform: translateY(24px);
+    transition: transform var(--transition-normal);
+    outline: none;
+}
+
+.modal-overlay.open .modal-container {
+    transform: translateY(0);
+}
+
+/* 3. Modal Header Elements */
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 10;
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: var(--text-secondary);
+    transition: all var(--transition-fast);
+}
+
+.modal-close:hover {
+    border-color: var(--primary);
+    color: var(--primary-hover);
+    transform: rotate(90deg);
+}
+
+/* Scrollable container for the modal's core content */
+.modal-scrollable {
+    overflow-y: auto;
+    flex-grow: 1;
+}
+
+.modal-img-wrapper {
+    width: 100%;
+    height: 320px;
+    position: relative;
+    border-bottom: 1px solid var(--border);
+}
+
+.modal-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 4. Modal Body & Grid Layouts */
+.modal-body {
+    padding: 40px;
+}
+
+.modal-header-info {
+    margin-bottom: 24px;
+}
+
+.modal-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--primary);
+    letter-spacing: 0.12em;
+    margin-bottom: 8px;
+    display: inline-block;
+}
+
+.modal-title {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    margin-bottom: 6px;
+}
+
+.modal-subtitle {
+    font-size: 13.5px;
+    color: var(--text-secondary);
+}
+
+.modal-grid {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    gap: 40px;
+    border-top: 1px solid var(--border);
+    padding-top: 30px;
+}
+
+/* Left main content block */
+.modal-content-left {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.modal-section-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: var(--text-primary);
+}
+
+.modal-text {
+    font-size: 14.5px;
+    line-height: 1.6;
+    color: var(--text-secondary);
+}
+
+/* Right detail specification block */
+.modal-content-right {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.modal-detail-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-accent);
+    border-radius: var(--border-radius);
+    padding: 24px;
+}
+
+.modal-detail-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.modal-detail-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.modal-detail-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    font-weight: 600;
+}
+
+.modal-detail-val {
+    font-size: 13.5px;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+/* 5. Special Modals */
+/* City Administrasi District-Subdistrict Selection Layout */
+.modal-admin-selector {
+    border-top: 1px solid var(--border);
+    padding-top: 30px;
+    margin-top: 30px;
+}
+
+.selector-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.selector-box {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.selector-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.selector-list-wrapper {
+    border: 1px solid var(--border);
+    border-radius: var(--border-radius);
+    background-color: var(--bg-secondary);
+    height: 180px;
+    overflow-y: auto;
+    padding: 8px;
+}
+
+.selector-item {
+    padding: 8px 12px;
+    font-size: 13px;
+    color: var(--text-secondary);
+    cursor: pointer;
+    border-radius: var(--border-radius);
+    transition: all var(--transition-fast);
+}
+
+.selector-item:hover {
+    background-color: var(--border);
+    color: var(--text-primary);
+}
+
+.selector-item.selected {
+    background-color: var(--primary-light);
+    color: var(--primary-hover);
+    font-weight: 500;
+    border-color: var(--border-accent);
+}
+
+.empty-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: var(--text-muted);
+    font-size: 12px;
+    font-style: italic;
+    text-align: center;
+}
+
+/* Scroll Lock on Body */
+body.modal-open {
+    overflow: hidden;
+}
+
+/* Gallery Zoom Modal */
+.gallery-zoom-overlay {
+    background-color: rgba(17, 24, 39, 0.9);
+}
+
+.gallery-zoom-container {
+    max-width: 900px;
+    background: transparent;
+    border: none;
+    overflow: visible;
+}
+
+.gallery-zoom-img {
+    width: 100%;
+    max-height: 70vh;
+    object-fit: contain;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.gallery-zoom-caption {
+    color: #FFFFFF;
+    text-align: center;
+    margin-top: 16px;
+    font-size: 14.5px;
+}

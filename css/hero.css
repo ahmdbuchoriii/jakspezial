@@ -1,0 +1,199 @@
+/* ==========================================================================
+   InfoJakarta Hero Slider Stylesheet
+   Contains Full-Viewport Image Slider with Text Overlays and Navigation.
+   Theme: Minimalist Orange & White
+   ========================================================================== */
+
+.hero-slider {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #000000;
+}
+
+.hero-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1), visibility 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero-slide.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.42); /* Darken for clean text legibility */
+    transform: scale(1.05);
+    transition: transform 8s ease;
+}
+
+.hero-slide.active .hero-image {
+    transform: scale(1);
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 850px;
+    padding: 0 24px;
+    text-align: center;
+    color: #FFFFFF;
+    z-index: 10;
+}
+
+.hero-subtitle {
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--secondary);
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(15px);
+    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s, transform 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
+}
+
+.hero-title {
+    font-family: var(--font-heading);
+    font-size: 52px;
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 32px;
+    letter-spacing: -0.03em;
+    color: inherit;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.4s, transform 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.4s;
+}
+
+.hero-actions {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.6s, transform 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.6s;
+}
+
+/* Trigger content slide-in animations when active */
+.hero-slide.active .hero-subtitle,
+.hero-slide.active .hero-title,
+.hero-slide.active .hero-actions {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Slider Arrow Navigation Controls */
+.hero-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    cursor: pointer;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transition: all var(--transition-fast);
+}
+
+.hero-arrow:hover {
+    background-color: #FFFFFF;
+    color: var(--text-primary);
+    border-color: #FFFFFF;
+}
+
+.hero-arrow-left {
+    left: 40px;
+}
+
+.hero-arrow-right {
+    right: 40px;
+}
+
+/* Slider Pagination Indicators */
+.hero-dots {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+
+.hero-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.35);
+    border: none;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.hero-dot.active {
+    background-color: var(--primary);
+    transform: scale(1.3);
+}
+
+/* Bottom Scroll Down Prompt */
+.hero-scroll-prompt {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    z-index: 10;
+}
+
+.hero-scroll-line {
+    width: 1px;
+    height: 35px;
+    background-color: rgba(255, 255, 255, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-scroll-line::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary);
+    animation: scrollLineAnimation 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes scrollLineAnimation {
+    0% { transform: translateY(-100%); }
+    80%, 100% { transform: translateY(100%); }
+}

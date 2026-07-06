@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Kota DKI Jakarta - JakSpezial</title>
+    <link rel="icon" type="image/png" href="../assets/logos/logojs.png">
+    
+    <!-- Meta SEO -->
+    <meta name="description" content="Informasi sejarah berdirinya DKI Jakarta, kepemimpinan gubernur saat ini, visi misi daerah, lambang kota, serta ringkasan luas wilayah dan kependudukan.">
+    <meta name="keywords" content="Profil Jakarta, Sejarah Jakarta, HUT Jakarta, Gubernur DKI Jakarta, Jayakarta, Batavia">
+    
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/cards.css">
+    <link rel="stylesheet" href="../css/modal.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    
+    <style>
+        /* Profile Page Custom Layout Components */
+        .profile-hero {
+            width: 100%;
+            height: 38vh;
+            position: relative;
+            background-color: #000000;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        
+        .profile-hero-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.4);
+        }
+        
+        .profile-hero-content {
+            position: relative;
+            z-index: 5;
+            color: #FFFFFF;
+            padding: 0 24px;
+            margin-top: 50px; /* Buffer for sticky nav */
+        }
+
+        .profile-grid-details {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 50px;
+            align-items: flex-start;
+        }
+
+        .leader-card {
+            border: 1px solid var(--border);
+            border-radius: var(--border-radius);
+            background-color: var(--bg-card);
+            padding: 30px;
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            margin-bottom: 24px;
+        }
+
+        .leader-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: var(--primary-light);
+            border: 1px solid var(--border-accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            color: var(--primary);
+            flex-shrink: 0;
+        }
+
+        .leader-info {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .leader-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: var(--text-muted);
+            letter-spacing: 0.1em;
+        }
+
+        .leader-name {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+    </style>
+</head>
+<body data-page="profile">
+
+    <!-- 1. Loading Screen Spinner -->
+    <div id="loading-screen">
+        <div class="spinner"></div>
+        <span style="font-family: var(--font-heading); font-size: 11px; font-weight: 700; letter-spacing: 0.15em; color: var(--primary); text-transform: uppercase;">JakSpezial</span>
+    </div>
+
+    <!-- 2. Navigation Header (Solid version) -->
+    <header class="navbar navbar-static">
+        <div class="container navbar-container">
+            <a href="../index.html" class="navbar-brand">
+                <span class="brand-name">Jak</span><span class="brand-accent">Spezial</span>
+            </a>
+            
+            <!-- Desktop Menu -->
+            <nav>
+                <ul class="navbar-menu">
+                    <li><a href="../index.html" class="navbar-link">Beranda</a></li>
+                    <li><a href="./profile.html" class="navbar-link active">Profil</a></li>
+                    <li><a href="./administrasi.html" class="navbar-link">Administrasi</a></li>
+                    <li><a href="./wisata.html" class="navbar-link">Wisata</a></li>
+                    <li><a href="./kuliner.html" class="navbar-link">Kuliner</a></li>
+                    <li><a href="./transportasi.html" class="navbar-link">Transportasi</a></li>
+                    <li><a href="./gallery.html" class="navbar-link">Galeri</a></li>
+                    <li><a href="./faq.html" class="navbar-link">FAQ</a></li>
+                    <li><a href="./about.html" class="navbar-link">Tentang</a></li>
+                </ul>
+            </nav>
+
+            <!-- Mobile Toggle -->
+            <button class="navbar-toggle" aria-label="Buka menu navigasi">
+                <span class="navbar-toggle-bar"></span>
+                <span class="navbar-toggle-bar"></span>
+                <span class="navbar-toggle-bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- 3. Mobile Nav Drawer Sidebar -->
+    <div class="mobile-nav-backdrop"></div>
+    <div class="mobile-nav">
+        <div class="mobile-nav-header">
+            <div class="navbar-brand"><span class="brand-name">Jak</span><span class="brand-accent">Spezial</span></div>
+            <button class="mobile-nav-close" aria-label="Tutup menu navigasi">✕</button>
+        </div>
+        <ul class="mobile-nav-menu">
+            <li><a href="../index.html" class="mobile-nav-link">Beranda</a></li>
+            <li><a href="./profile.html" class="mobile-nav-link active">Profil</a></li>
+            <li><a href="./administrasi.html" class="mobile-nav-link">Administrasi</a></li>
+            <li><a href="./wisata.html" class="mobile-nav-link">Wisata</a></li>
+            <li><a href="./kuliner.html" class="mobile-nav-link">Kuliner</a></li>
+            <li><a href="./transportasi.html" class="mobile-nav-link">Transportasi</a></li>
+            <li><a href="./gallery.html" class="mobile-nav-link">Galeri</a></li>
+            <li><a href="./faq.html" class="mobile-nav-link">FAQ</a></li>
+            <li><a href="./about.html" class="mobile-nav-link">Tentang</a></li>
+        </ul>
+    </div>
+
+    <!-- 4. Profile Hero Section -->
+    <section class="profile-hero" aria-label="Profil DKI Jakarta">
+        <img src="https://images.pexels.com/photos/11177414/pexels-photo-11177414.jpeg" alt="Jakarta City Skyline" class="profile-hero-img">
+        <div class="profile-hero-content">
+            <span class="section-label" style="color: var(--secondary); margin-bottom: 8px;">Jaya Raya</span>
+            <h1 style="font-size: 38px; color: #FFFFFF; letter-spacing: -0.02em;">Profil Provinsi DKI Jakarta</h1>
+        </div>
+    </section>
+
+    <!-- 5. Main Content Section -->
+    <section class="section">
+        <div class="container profile-grid-details">
+            <!-- Left Column: Description & Leadership info -->
+            <div class="reveal">
+                <span class="section-label">Tentang Jakarta</span>
+                <h2 class="section-title" style="text-align: left; margin-bottom: 20px;">Ibu Kota Negara Republik Indonesia</h2>
+                <p class="modal-text" style="margin-bottom: 30px;">
+                    DKI Jakarta memiliki kedudukan khusus yang diatur dalam undang-undang sebagai pusat pemerintahan serta representasi diplomatik bangsa. Kota metropolitan ini memegang peranan krusial sebagai pendorong lokomotif ekonomi nasional. Meskipun rencana pemindahan pusat pemerintahan ke Ibu Kota Nusantara (IKN) sedang berjalan, Jakarta diproyeksikan tetap bertumbuh sebagai kota global pusat perdagangan internasional dan jasa keuangan regional.
+                </p>
+
+                <h3 class="modal-section-title" style="margin-bottom: 16px;">Struktur Kepemimpinan Provinsi</h3>
+                
+                <!-- Governor -->
+                <div class="leader-card">
+                    <div class="leader-avatar">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Pramono_Anung_Gubernur_DKI.jpg/500px-Pramono_Anung_Gubernur_DKI.jpg" alt="Nama" style="width:100%; height:100%; object-fit:cover; border-radius:50%;">
+                    </div>
+                    <div class="leader-info">
+                        <span class="leader-label">Gubernur</span>
+                        <span class="leader-name" id="prof-gov">-</span>
+                    </div>
+                </div>
+
+                <!-- Vice Governor -->
+                <div class="leader-card">
+                    <div class="leader-avatar">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Rano_Karno_Wagub_DKJ_%28cropped%29.jpg/500px-Rano_Karno_Wagub_DKJ_%28cropped%29.jpg" alt="Nama" style="width:100%; height:100%; object-fit:cover; border-radius:50%;">
+                    </div>
+                    <div class="leader-info">
+                        <span class="leader-label">Wakil Gubernur</span>
+                        <span class="leader-name" id="prof-vice">-</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Regional Facts & Details Box -->
+            <div class="reveal">
+                <div class="modal-detail-card" style="padding: 30px; border-color: var(--border);">
+                    <h3 class="modal-section-title" style="border-bottom: 1px solid var(--border); padding-bottom: 12px; margin-bottom: 20px;">Informasi Umum</h3>
+                    
+                    <ul class="modal-detail-list">
+                        <li class="modal-detail-item">
+                            <span class="modal-detail-label">Semboyan Daerah</span>
+                            <span class="modal-detail-val" id="prof-motto">-</span>
+                        </li>
+                        <li class="modal-detail-item">
+                            <span class="modal-detail-label">Hari Jadi Kota</span>
+                            <span class="modal-detail-val" id="prof-anniv">-</span>
+                        </li>
+                        <li class="modal-detail-item">
+                            <span class="modal-detail-label">Luas Wilayah</span>
+                            <span class="modal-detail-val" id="prof-area">-</span>
+                        </li>
+                        <li class="modal-detail-item">
+                            <span class="modal-detail-label">Jumlah Kependudukan</span>
+                            <span class="modal-detail-val" id="prof-pop">-</span>
+                        </li>
+                    </ul>
+
+                    <div style="margin-top: 30px; border-top: 1px solid var(--border); padding-top: 24px; text-align: center;">
+                        <!-- Embed standard vector-drawn logo DKI or region graphics -->
+                        <span class="section-label" style="margin-bottom: 8px;">Logo Resmi DKI</span>
+                        <div style="display: flex; justify-content: center; margin-top: 12px;">
+                            <!-- We use a neat geometric SVG shape representing the monument and scale shields instead of image dependencies -->
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Coat_of_arms_of_Jakarta.svg/500px-Coat_of_arms_of_Jakarta.svg.png" alt="Logo Resmi DKI Jakarta" style="width: 120px; height: auto;">
+                                <path d="M50 5L90 28V72L50 95L10 72V28L50 5Z" stroke="#F97316" stroke-width="3" fill="#FFF7ED"/>
+                                <rect x="46" y="25" width="8" height="40" rx="2" fill="#EA580C"/>
+                                <circle cx="50" cy="20" r="4" fill="#F97316"/>
+                                <line x1="30" y1="75" x2="70" y2="75" stroke="#EA580C" stroke-width="4" stroke-linecap="round"/>
+                                <line x1="35" y1="83" x2="65" y2="83" stroke="#FDBA74" stroke-width="3" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. History Timeline Section -->
+    <section class="section section-dark">
+        <div class="container" style="max-width: 800px;">
+            <div class="section-header">
+                <span class="section-label">Linimasa Sejarah</span>
+                <h2 class="section-title">Kilas Sejarah Perkembangan Jakarta</h2>
+                <p class="section-subtitle">Transformasi pelabuhan Sunda Kelapa hingga menjadi pusat kota metropolitan megapolitan terbesar di Indonesia.</p>
+            </div>
+
+            <!-- Injected dynamically by JS main.js -->
+            <div id="history-timeline" style="margin-top: 40px;"></div>
+        </div>
+    </section>
+
+    <!-- 7. Shared Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-column">
+                <a href="../index.html" class="footer-brand"><span class="brand-name">Jak</span><span class="brand-accent">Spezial</span></a>
+                <p class="footer-text">JakSpezial adalah portal informasi satu pintu yang mengenalkan keindahan budaya, pariwisata, kuliner, dan tata kelola kota Daerah Khusus Ibukota Jakarta.</p>
+                <div class="footer-socials">
+                    <a href="https://facebook.com" class="footer-social-icon" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><img src="../assets/logos/facebook.svg" alt="Facebook" style="width: 18px; height: 18px;"></a>
+                    <a href="https://twitter.com" class="footer-social-icon" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><img src="../assets/logos/twitter.svg" alt="Twitter" style="width: 18px; height: 18px;"></a>
+                    <a href="https://instagram.com" class="footer-social-icon" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><img src="../assets/logos/instagram.svg" alt="Instagram" style="width: 18px; height: 18px;"></a>
+                    <a href="https://youtube.com" class="footer-social-icon" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><img src="../assets/logos/youtube.svg" alt="YouTube" style="width: 18px; height: 18px;"></a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h3 class="footer-title">Navigasi Utama</h3>
+                <ul class="footer-links">
+                    <li><a href="../index.html" class="footer-link">Beranda</a></li>
+                    <li><a href="./profile.html" class="footer-link">Profil Kota</a></li>
+                    <li><a href="./administrasi.html" class="footer-link">Administrasi</a></li>
+                    <li><a href="./wisata.html" class="footer-link">Destinasi Wisata</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3 class="footer-title">Informasi Lain</h3>
+                <ul class="footer-links">
+                    <li><a href="./kuliner.html" class="footer-link">Kuliner Betawi</a></li>
+                    <li><a href="./transportasi.html" class="footer-link">Transportasi Transit</a></li>
+                    <li><a href="./gallery.html" class="footer-link">Galeri Foto</a></li>
+                    <li><a href="./faq.html" class="footer-link">FAQ Accordion</a></li>
+                    <li><a href="./about.html" class="footer-link">Hubungi Kami</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3 class="footer-title">Kredensial Project</h3>
+                <div class="footer-dev-card">
+                    <div class="footer-dev-title">Tugas Universitas</div>
+                    <p class="footer-dev-text">Dikembangkan oleh Tim Mahasiswa Semester 2 Program Studi Informatika. Dibuat menggunakan HTML5, CSS3, dan Vanilla JavaScript murni tanpa bantuan framework eksternal.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container footer-bottom">
+            <p class="footer-copy">&copy; 2026 JakSpezial - Explore Jakarta Easily. Dibuat untuk tujuan edukasi pembelajaran.</p>
+            <ul class="footer-meta-links">
+                <li><a href="./about.html" class="footer-meta-link">Developer</a></li>
+                <li><a href="./faq.html" class="footer-meta-link">Syarat & Ketentuan</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <!-- 8. Back To Top Arrow -->
+    <button id="back-to-top" aria-label="Kembali ke atas">▲</button>
+
+    <!-- 9. Centralized Detail Modal Wrapper -->
+    <div id="detail-modal" class="modal-overlay" onclick="handleBackdropClick(event)">
+        <div class="modal-container">
+            <!-- Content Injected Dynamically by JS -->
+        </div>
+    </div>
+
+    <!-- Script Integrations -->
+    <script src="../js/data.js"></script>
+    <script src="../js/render.js"></script>
+    <script src="../js/search.js"></script>
+    <script src="../js/filter.js"></script>
+    <script src="../js/modal.js"></script>
+    <script src="../js/animation.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

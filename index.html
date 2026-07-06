@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JakSpezial - Explore Jakarta Easily</title>
+    <link rel="icon" type="image/png" href="assets/logos/logojs.png">
+    
+    <!-- Meta SEO -->
+    <meta name="description" content="Portal informasi terlengkap mengenai kota DKI Jakarta. Telusuri profil sejarah, data administrasi wilayah, pariwisata, kuliner, dan sarana transportasi publik.">
+    <meta name="keywords" content="Jakarta, DKI Jakarta, Info Jakarta, Wisata Jakarta, Kuliner Betawi, Transportasi Jakarta, Monas, Kota Tua">
+    
+    <!-- Open Graph (Facebook/Social Media) -->
+    <meta property="og:title" content="JakSpezial - Jelajahi Kota Jakarta Dengan Mudah">
+    <meta property="og:description" content="Informasi lengkap seputar administrasi wilayah, objek wisata, hidangan kuliner khas, dan panduan perjalanan transportasi umum di Daerah Khusus Ibukota Jakarta.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="./assets/images/hero/skyline.jpg">
+
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/navbar.css">
+    <link rel="stylesheet" href="./css/hero.css">
+    <link rel="stylesheet" href="./css/cards.css">
+    <link rel="stylesheet" href="./css/modal.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/responsive.css">
+</head>
+<body data-page="home">
+
+    <!-- 1. Loading Screen Spinner -->
+    <div id="loading-screen">
+        <div class="spinner"></div>
+        <span style="font-family: var(--font-heading); font-size: 11px; font-weight: 700; letter-spacing: 0.15em; color: var(--primary); text-transform: uppercase;">JakSpezial</span>
+    </div>
+
+    <!-- 2. Navigation Header -->
+    <header class="navbar">
+        <div class="container navbar-container">
+            <a href="./index.html" class="navbar-brand">
+                <span class="brand-name">Jak</span><span class="brand-accent">Spezial</span>
+            </a>
+            
+            <!-- Desktop Menu -->
+            <nav>
+                <ul class="navbar-menu">
+                    <li><a href="./index.html" class="navbar-link active">Beranda</a></li>
+                    <li><a href="./pages/profile.html" class="navbar-link">Profil</a></li>
+                    <li><a href="./pages/administrasi.html" class="navbar-link">Administrasi</a></li>
+                    <li><a href="./pages/wisata.html" class="navbar-link">Wisata</a></li>
+                    <li><a href="./pages/kuliner.html" class="navbar-link">Kuliner</a></li>
+                    <li><a href="./pages/transportasi.html" class="navbar-link">Transportasi</a></li>
+                    <li><a href="./pages/gallery.html" class="navbar-link">Galeri</a></li>
+                    <li><a href="./pages/faq.html" class="navbar-link">FAQ</a></li>
+                    <li><a href="./pages/about.html" class="navbar-link">Tentang</a></li>
+                </ul>
+            </nav>
+
+            <!-- Mobile Toggle -->
+            <button class="navbar-toggle" aria-label="Buka menu navigasi">
+                <span class="navbar-toggle-bar"></span>
+                <span class="navbar-toggle-bar"></span>
+                <span class="navbar-toggle-bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- 3. Mobile Nav Drawer Sidebar -->
+    <div class="mobile-nav-backdrop"></div>
+    <div class="mobile-nav">
+        <div class="mobile-nav-header">
+            <div class="navbar-brand"><span class="brand-name">Jak</span><span class="brand-accent">Spezial</span></div>
+            <button class="mobile-nav-close" aria-label="Tutup menu navigasi">✕</button>
+        </div>
+        <ul class="mobile-nav-menu">
+            <li><a href="./index.html" class="mobile-nav-link active">Beranda</a></li>
+            <li><a href="./pages/profile.html" class="mobile-nav-link">Profil</a></li>
+            <li><a href="./pages/administrasi.html" class="mobile-nav-link">Administrasi</a></li>
+            <li><a href="./pages/wisata.html" class="mobile-nav-link">Wisata</a></li>
+            <li><a href="./pages/kuliner.html" class="mobile-nav-link">Kuliner</a></li>
+            <li><a href="./pages/transportasi.html" class="mobile-nav-link">Transportasi</a></li>
+            <li><a href="./pages/gallery.html" class="mobile-nav-link">Galeri</a></li>
+            <li><a href="./pages/faq.html" class="mobile-nav-link">FAQ</a></li>
+            <li><a href="./pages/about.html" class="mobile-nav-link">Tentang</a></li>
+        </ul>
+    </div>
+
+    <!-- 4. Hero Slider Section -->
+    <section class="hero-slider" aria-label="Slideshow Kota Jakarta">
+        <!-- Slide 1 -->
+        <div class="hero-slide active">
+            <img src="https://images.pexels.com/photos/38140841/pexels-photo-38140841.jpeg" alt="Monas Jakarta" class="hero-image">
+            <div class="hero-content">
+                <span class="hero-subtitle">Portal Informasi Resmi</span>
+                <h1 class="hero-title">Jelajahi Jakarta Dengan Mudah</h1>
+                <div class="hero-actions">
+                    <a href="./pages/profile.html" class="btn btn-primary">Profil Provinsi</a>
+                    <a href="./pages/wisata.html" class="btn btn-secondary" style="border-color: rgba(255,255,255,0.4); color: #FFF;">Cari Wisata</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slide 2 -->
+        <div class="hero-slide">
+            <img src="https://images.pexels.com/photos/4984211/pexels-photo-4984211.jpeg" alt="Pemandangan Lalu Lintas Jalan Sudirman Malam Hari" class="hero-image">
+            <div class="hero-content">
+                <span class="hero-subtitle">Metropolitan Indonesia</span>
+                <h1 class="hero-title">Kota Bisnis dan Pusat Kebudayaan</h1>
+                <div class="hero-actions">
+                    <a href="./pages/administrasi.html" class="btn btn-primary">Administrasi Wilayah</a>
+                    <a href="./pages/transportasi.html" class="btn btn-secondary" style="border-color: rgba(255,255,255,0.4); color: #FFF;">Panduan Transit</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="hero-slide">
+            <img src="https://images.pexels.com/photos/31980914/pexels-photo-31980914.jpeg" alt="Ondel Ondel" class="hero-image">
+            <div class="hero-content">
+                <span class="hero-subtitle">Wisata & Sejarah Sejak 1527</span>
+                <h1 class="hero-title">Pesona Heritage Sunda Kelapa</h1>
+                <div class="hero-actions">
+                    <a href="./pages/kuliner.html" class="btn btn-primary">Kuliner Betawi</a>
+                    <a href="./pages/gallery.html" class="btn btn-secondary" style="border-color: rgba(255,255,255,0.4); color: #FFF;">Galeri Foto</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Carousel navigation arrows -->
+        <button class="hero-arrow hero-arrow-left" aria-label="Slide sebelumnya">❮</button>
+        <button class="hero-arrow hero-arrow-right" aria-label="Slide berikutnya">❯</button>
+
+        <!-- Carousel Dots -->
+        <div class="hero-dots" id="hero-dots"></div>
+
+        <!-- Scroll down line animation indicator -->
+        <div class="hero-scroll-prompt">
+            <span>Scroll</span>
+            <div class="hero-scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- 5. Profile Brief Intro Section -->
+    <section class="section">
+        <div class="container" style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 60px; align-items: center;">
+            <div class="reveal">
+                <span class="section-label">Profil Ibu Kota</span>
+                <h2 class="section-title" style="text-align: left;">Pusat Jantung Metropolitan Terbesar Asia Tenggara</h2>
+                <p class="modal-text" style="margin-bottom: 24px; font-size: 15px;">
+                    DKI Jakarta adalah pusat administrasi negara, pusat jaringan keuangan nasional, serta wadah akulturasi etnis budaya nusantara. Terdiri atas 5 kota administratif dan 1 kabupaten administratif di pesisir Teluk Jakarta, kota ini menawarkan lanskap perkotaan yang hidup berdampingan dengan situs bersejarah peninggalan era kolonial.
+                </p>
+                <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+                    <a href="./pages/profile.html" class="btn btn-primary">Selengkapnya</a>
+                    <a href="./pages/about.html" class="btn btn-secondary">Hubungi Kami</a>
+                    <a href="./pages/wisata.html" class="btn btn-secondary">Jelajah Wisata</a>
+                </div>
+            </div>
+            
+            <!-- Dynamic Stats Block with Counter -->
+            <div class="reveal" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;">
+                <div style="padding: 24px; border: 1px solid var(--border); border-radius: var(--border-radius); background-color: var(--bg-card); text-align: center;">
+                    <div class="stat-counter" data-target="661" data-suffix=" km²" style="font-family: var(--font-heading); font-size: 32px; font-weight: 700; color: var(--primary); margin-bottom: 4px;">0</div>
+                    <span style="font-size: 12px; font-weight: 600; text-transform: uppercase; color: var(--text-secondary); letter-spacing: 0.05em;">Luas Wilayah</span>
+                </div>
+                <div style="padding: 24px; border: 1px solid var(--border); border-radius: var(--border-radius); background-color: var(--bg-card); text-align: center;">
+                    <div class="stat-counter" data-target="10679951" data-format="population" data-suffix=" Jiwa" style="font-family: var(--font-heading); font-size: 32px; font-weight: 700; color: var(--primary); margin-bottom: 4px;">0</div>
+                    <span style="font-size: 12px; font-weight: 600; text-transform: uppercase; color: var(--text-secondary); letter-spacing: 0.05em;">Jumlah Penduduk</span>
+                </div>
+                <div style="padding: 24px; border: 1px solid var(--border); border-radius: var(--border-radius); background-color: var(--bg-card); text-align: center;">
+                    <div class="stat-counter" data-target="6" style="font-family: var(--font-heading); font-size: 32px; font-weight: 700; color: var(--primary); margin-bottom: 4px;">0</div>
+                    <span style="font-size: 12px; font-weight: 600; text-transform: uppercase; color: var(--text-secondary); letter-spacing: 0.05em;">Kota/Kabupaten</span>
+                </div>
+                <div style="padding: 24px; border: 1px solid var(--border); border-radius: var(--border-radius); background-color: var(--bg-card); text-align: center;">
+                    <div class="stat-counter" data-target="44" style="font-family: var(--font-heading); font-size: 32px; font-weight: 700; color: var(--primary); margin-bottom: 4px;">0</div>
+                    <span style="font-size: 12px; font-weight: 600; text-transform: uppercase; color: var(--text-secondary); letter-spacing: 0.05em;">Kecamatan</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Administrative Quick Links Portal -->
+    <section class="section section-dark">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Wilayah Administrasi</span>
+                <h2 class="section-title">6 Pembagian Wilayah Kota & Kabupaten</h2>
+                <p class="section-subtitle">Struktur administrasi DKI Jakarta yang terbagi menjadi lima wilayah kota administratif dan satu kabupaten kepulauan administratif.</p>
+            </div>
+            
+            <div class="grid grid-3">
+                <!-- Jakarta Pusat -->
+                <div class="card city-card reveal" style="background-color: var(--bg-primary);">
+                    <div class="card-img-wrapper" style="aspect-ratio: 16 / 10;">
+                        <img src="https://images.pexels.com/photos/36621246/pexels-photo-36621246.jpeg" alt="Wilayah Jakarta Pusat" class="card-img">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Jakarta Pusat</h3>
+                        <p class="card-desc">Pusat pemerintahan nasional, kedutaan asing, institusi moneter, dan situs bersejarah utama seperti Monas dan Istiqlal.</p>
+                        <a href="./pages/administrasi.html" class="btn btn-secondary" style="width: 100%; font-size: 13px;">Lihat Kecamatan</a>
+                    </div>
+                </div>
+                
+                <!-- Jakarta Barat -->
+                <div class="card city-card reveal" style="background-color: var(--bg-primary);">
+                    <div class="card-img-wrapper" style="aspect-ratio: 16 / 10;">
+                        <img src="https://images.pexels.com/photos/38186560/pexels-photo-38186560.jpeg" alt="Wilayah Jakarta Barat" class="card-img">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Jakarta Barat</h3>
+                        <p class="card-desc">Pusat warisan budaya kolonial Kota Tua, kuliner oriental legendaris, serta wilayah perdagangan grosir elektronik.</p>
+                        <a href="./pages/administrasi.html" class="btn btn-secondary" style="width: 100%; font-size: 13px;">Lihat Kecamatan</a>
+                    </div>
+                </div>
+                
+                <!-- Jakarta Selatan -->
+                <div class="card city-card reveal" style="background-color: var(--bg-primary);">
+                    <div class="card-img-wrapper" style="aspect-ratio: 16 / 10;">
+                        <img src="https://images.pexels.com/photos/14381373/pexels-photo-14381373.jpeg" alt="Wilayah Jakarta Selatan" class="card-img">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Jakarta Selatan</h3>
+                        <p class="card-desc">Kawasan pemukiman asri, perkantoran elit SCBD Sudirman, hub kreatif anak muda, serta kebun binatang Ragunan.</p>
+                        <a href="./pages/administrasi.html" class="btn btn-secondary" style="width: 100%; font-size: 13px;">Lihat Kecamatan</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 40px;" class="reveal">
+                <a href="./pages/administrasi.html" class="btn btn-primary">Telusuri Seluruh Wilayah</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Tourism Preview Highlights Grid -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Destinasi Populer</span>
+                <h2 class="section-title">Temukan Destinasi Wisata Pilihan</h2>
+                <p class="section-subtitle">Mulailah petualangan mengelilingi situs bersejarah, kebun raya alam terbuka, hingga taman rekreasi modern keluarga.</p>
+            </div>
+            
+            <!-- Injected by Javascript main.js -->
+            <div class="grid grid-3" id="wisata-highlight-grid"></div>
+
+            <div style="text-align: center; margin-top: 50px;" class="reveal">
+                <a href="./pages/wisata.html" class="btn btn-primary">Lihat 30+ Tempat Wisata</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. Shared Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-column">
+                <a href="./index.html" class="footer-brand"><span class="brand-name">Jak</span><span class="brand-accent">Spezial</span></a>
+                <p class="footer-text">JakSpezial adalah portal informasi satu pintu yang mengenalkan keindahan budaya, pariwisata, kuliner, dan tata kelola kota Daerah Khusus Ibukota Jakarta.</p>
+                <div class="footer-socials">
+                    <a href="https://facebook.com" class="footer-social-icon" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><img src="./assets/logos/facebook.svg" alt="Facebook" style="width: 18px; height: 18px;"></a>
+                    <a href="https://twitter.com" class="footer-social-icon" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><img src="./assets/logos/twitter.svg" alt="Twitter" style="width: 18px; height: 18px;"></a>
+                    <a href="https://instagram.com" class="footer-social-icon" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><img src="./assets/logos/instagram.svg" alt="Instagram" style="width: 18px; height: 18px;"></a>
+                    <a href="https://youtube.com" class="footer-social-icon" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><img src="./assets/logos/youtube.svg" alt="YouTube" style="width: 18px; height: 18px;"></a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h3 class="footer-title">Navigasi Utama</h3>
+                <ul class="footer-links">
+                    <li><a href="./index.html" class="footer-link">Beranda</a></li>
+                    <li><a href="./pages/profile.html" class="footer-link">Profil Kota</a></li>
+                    <li><a href="./pages/administrasi.html" class="footer-link">Administrasi</a></li>
+                    <li><a href="./pages/wisata.html" class="footer-link">Destinasi Wisata</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3 class="footer-title">Informasi Lain</h3>
+                <ul class="footer-links">
+                    <li><a href="./pages/kuliner.html" class="footer-link">Kuliner Betawi</a></li>
+                    <li><a href="./pages/transportasi.html" class="footer-link">Transportasi Transit</a></li>
+                    <li><a href="./pages/gallery.html" class="footer-link">Galeri Foto</a></li>
+                    <li><a href="./pages/faq.html" class="footer-link">FAQ Accordion</a></li>
+                    <li><a href="./pages/about.html" class="footer-link">Hubungi Kami</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3 class="footer-title">Kredensial Project</h3>
+                <div class="footer-dev-card">
+                    <div class="footer-dev-title">Tugas Universitas</div>
+                    <p class="footer-dev-text">Dikembangkan oleh Tim Mahasiswa Semester 2 Program Studi Informatika. Dibuat menggunakan HTML5, CSS3, dan Vanilla JavaScript murni tanpa bantuan framework eksternal.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container footer-bottom">
+            <p class="footer-copy">&copy; 2026 JakSpezial - Explore Jakarta Easily. Dibuat untuk tujuan edukasi pembelajaran.</p>
+            <ul class="footer-meta-links">
+                <li><a href="./pages/about.html" class="footer-meta-link">Developer</a></li>
+                <li><a href="./pages/faq.html" class="footer-meta-link">Syarat & Ketentuan</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <!-- 9. Back To Top Arrow -->
+    <button id="back-to-top" aria-label="Kembali ke atas">▲</button>
+
+    <!-- 10. Centralized Detail Modal Wrapper -->
+    <div id="detail-modal" class="modal-overlay" onclick="handleBackdropClick(event)">
+        <div class="modal-container">
+            <!-- Content Injected Dynamically by JS -->
+        </div>
+    </div>
+
+    <!-- Script Integrations -->
+    <script src="./js/data.js"></script>
+    <script src="./js/render.js"></script>
+    <script src="./js/search.js"></script>
+    <script src="./js/filter.js"></script>
+    <script src="./js/modal.js"></script>
+    <script src="./js/animation.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+</html>

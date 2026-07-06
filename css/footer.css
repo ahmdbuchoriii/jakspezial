@@ -1,0 +1,146 @@
+/* ==========================================================================
+   InfoJakarta Footer Stylesheet
+   Contains Multi-Column Site Navigation Footer and Copyright Sub-Bar.
+   Theme: Minimalist Orange & White (Borders over Shadows)
+   ========================================================================== */
+
+.footer {
+    background-color: var(--bg-secondary);
+    border-top: 1px solid var(--border);
+    padding: 80px 0 40px 0;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 0.8fr 0.8fr 1.2fr;
+    gap: 50px;
+    margin-bottom: 60px;
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-brand {
+    font-family: var(--font-heading);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 16px;
+}
+
+.footer-brand .brand-accent {
+    color: var(--primary);
+}
+
+.footer-text {
+    font-size: 13.5px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 24px;
+    max-width: 280px;
+}
+
+.footer-socials {
+    display: flex;
+    gap: 12px;
+}
+
+.footer-social-icon {
+    width: 36px;
+    height: 36px;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-secondary);
+    font-size: 14px;
+    transition: all var(--transition-fast);
+    background-color: var(--bg-primary);
+}
+
+.footer-social-icon:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+    transform: translateY(-2px);
+}
+
+.footer-title {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--text-primary);
+    margin-bottom: 24px;
+}
+
+.footer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-link {
+    font-size: 13.5px;
+    color: var(--text-secondary);
+}
+
+.footer-link:hover {
+    color: var(--primary);
+}
+
+/* Developer Credits styling */
+.footer-dev-card {
+    border: 1px solid var(--border);
+    background-color: var(--bg-primary);
+    border-radius: var(--border-radius);
+    padding: 18px;
+}
+
+.footer-dev-title {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--primary-hover);
+    margin-bottom: 4px;
+}
+
+.footer-dev-text {
+    font-size: 12.5px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+/* Footer Bottom Section */
+.footer-bottom {
+    border-top: 1px solid var(--border);
+    padding-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.footer-copy {
+    font-size: 12.5px;
+    color: var(--text-secondary);
+}
+
+.footer-meta-links {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+.footer-meta-link {
+    font-size: 12.5px;
+    color: var(--text-secondary);
+}
+
+.footer-meta-link:hover {
+    color: var(--primary);
+}

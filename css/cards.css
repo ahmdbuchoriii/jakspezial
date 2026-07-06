@@ -1,0 +1,360 @@
+/* ==========================================================================
+   InfoJakarta Card & Grid Components Stylesheet
+   Contains Grid Systems, Search/Filter Forms, and Card Item Styles.
+   Theme: Minimalist Orange & White (Borders over Shadows)
+   ========================================================================== */
+
+/* 1. Grid Systems */
+.grid {
+    display: grid;
+    gap: 30px;
+}
+
+.grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+/* 2. Search & Filter Bar Layout */
+.filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--border);
+}
+
+.search-box {
+    position: relative;
+    flex: 1;
+    min-width: 280px;
+    max-width: 450px;
+}
+
+.search-input {
+    width: 100%;
+    padding: 11px 16px 11px 40px;
+    font-family: var(--font-body);
+    font-size: 14px;
+    color: var(--text-primary);
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border);
+    border-radius: var(--border-radius);
+    outline: none;
+    transition: border-color var(--transition-fast);
+}
+
+.search-input:focus {
+    border-color: var(--primary);
+}
+
+.search-icon {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 14px;
+    color: var(--text-secondary);
+    pointer-events: none;
+}
+
+.filter-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+}
+
+.filter-select {
+    padding: 10px 16px;
+    font-family: var(--font-body);
+    font-size: 13.5px;
+    color: var(--text-secondary);
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border);
+    border-radius: var(--border-radius);
+    outline: none;
+    cursor: pointer;
+    transition: border-color var(--transition-fast);
+    min-width: 160px;
+}
+
+.filter-select:focus {
+    border-color: var(--primary);
+}
+
+.filter-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.filter-tab {
+    padding: 8px 16px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    background-color: transparent;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.filter-tab:hover {
+    border-color: var(--text-primary);
+    color: var(--text-primary);
+}
+
+.filter-tab.active {
+    background-color: var(--primary-light);
+    border-color: var(--primary);
+    color: var(--primary-hover);
+}
+
+/* 3. Base Card styling */
+.card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    transition: transform var(--transition-fast), border-color var(--transition-fast);
+}
+
+.card:hover {
+    border-color: var(--primary);
+    transform: translateY(-3px);
+}
+
+.card-img-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    border-bottom: 1px solid var(--border);
+}
+
+.card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.card:hover .card-img {
+    transform: scale(1.03);
+}
+
+.card-badge {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    z-index: 2;
+}
+
+.card-body {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.card-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    transition: color var(--transition-fast);
+}
+
+.card:hover .card-title {
+    color: var(--primary-hover);
+}
+
+.card-desc {
+    font-size: 13.5px;
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+    line-height: 1.5;
+    flex-grow: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Metadata List inside Cards */
+.card-meta-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+}
+
+.card-meta-item {
+    display: flex;
+    align-items: center;
+    font-size: 12.5px;
+    color: var(--text-secondary);
+    gap: 8px;
+}
+
+.card-meta-icon {
+    color: var(--primary);
+    font-size: 14px;
+    width: 16px;
+    display: inline-flex;
+    justify-content: center;
+}
+
+.card-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: auto;
+}
+
+.card-actions .btn {
+    flex: 1;
+}
+
+/* 4. Category-Specific Card Adjustments */
+/* City/Kota Cards */
+.city-card {
+    background-color: var(--bg-primary);
+}
+
+.city-stats-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-bottom: 16px;
+    padding: 12px;
+    background-color: var(--bg-secondary);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border);
+}
+
+.city-stat {
+    display: flex;
+    flex-direction: column;
+}
+
+.city-stat-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    font-weight: 600;
+}
+
+.city-stat-val {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+/* Culinary/Food Cards */
+.food-card {
+    border-color: var(--border);
+}
+
+.food-price {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--primary-hover);
+    margin-bottom: 12px;
+}
+
+/* Transportation Cards */
+.transit-card {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    background-color: var(--bg-primary);
+    border-radius: var(--border-radius);
+}
+
+.transit-img-wrapper {
+    width: 220px;
+    min-width: 220px;
+    aspect-ratio: auto;
+    border-bottom: none;
+    border-right: 1px solid var(--border);
+}
+
+.transit-body {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Gallery Photo Cards */
+.gallery-card {
+    position: relative;
+    aspect-ratio: 1;
+    cursor: pointer;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    border: 1px solid var(--border);
+}
+
+.gallery-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-normal);
+}
+
+.gallery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(31, 41, 55, 0.45);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 24px;
+    opacity: 0;
+    transition: opacity var(--transition-fast);
+    z-index: 2;
+}
+
+.gallery-card:hover .gallery-overlay {
+    opacity: 1;
+}
+
+.gallery-card:hover .gallery-img {
+    transform: scale(1.04);
+}
+
+.gallery-title {
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.gallery-cat {
+    color: var(--secondary);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 700;
+}

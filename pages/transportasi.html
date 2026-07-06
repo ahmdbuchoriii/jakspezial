@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transportasi Transit Kota Jakarta - JakSpezial</title>
+    <link rel="icon" type="image/png" href="../assets/logos/logojs.png">
+    
+    <!-- Meta SEO -->
+    <meta name="description" content="Panduan jaringan transportasi publik transit di Jakarta. Rute MRT, LRT, TransJakarta, KRL Commuterline, dan Kereta Bandara beserta jam operasional dan link resmi.">
+    <meta name="keywords" content="Transportasi Jakarta, MRT Jakarta, LRT Jakarta, Transjakarta, Busway, KRL Commuterline, Kereta Bandara Soekarno Hatta">
+    
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/cards.css">
+    <link rel="stylesheet" href="../css/modal.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    
+    <style>
+        .page-header-banner {
+            width: 100%;
+            padding: 80px 0 40px 0;
+            background-color: var(--bg-secondary);
+            border-bottom: 1px solid var(--border);
+            margin-top: var(--header-height);
+            text-align: center;
+        }
+
+        /* Specific modifications for spacing out stacked horizontal transit cards */
+        #transport-list {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+    </style>
+</head>
+<body data-page="transportasi">
+
+    <!-- 1. Loading Screen Spinner -->
+    <div id="loading-screen">
+        <div class="spinner"></div>
+        <span style="font-family: var(--font-heading); font-size: 11px; font-weight: 700; letter-spacing: 0.15em; color: var(--primary); text-transform: uppercase;">JakSpezial</span>
+    </div>
+
+    <!-- 2. Navigation Header (Solid version) -->
+    <header class="navbar navbar-static">
+        <div class="container navbar-container">
+            <a href="../index.html" class="navbar-brand">
+                <span class="brand-name">Jak</span><span class="brand-accent">Spezial</span>
+            </a>
+            
+            <!-- Desktop Menu -->
+            <nav>
+                <ul class="navbar-menu">
+                    <li><a href="../index.html" class="navbar-link">Beranda</a></li>
+                    <li><a href="./profile.html" class="navbar-link">Profil</a></li>
+                    <li><a href="./administrasi.html" class="navbar-link">Administrasi</a></li>
+                    <li><a href="./wisata.html" class="navbar-link">Wisata</a></li>
+                    <li><a href="./kuliner.html" class="navbar-link">Kuliner</a></li>
+                    <li><a href="./transportasi.html" class="navbar-link active">Transportasi</a></li>
+                    <li><a href="./gallery.html" class="navbar-link">Galeri</a></li>
+                    <li><a href="./faq.html" class="navbar-link">FAQ</a></li>
+                    <li><a href="./about.html" class="navbar-link">Tentang</a></li>
+                </ul>
+            </nav>
+
+            <!-- Mobile Toggle -->
+            <button class="navbar-toggle" aria-label="Buka menu navigasi">
+                <span class="navbar-toggle-bar"></span>
+                <span class="navbar-toggle-bar"></span>
+                <span class="navbar-toggle-bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- 3. Mobile Nav Drawer Sidebar -->
+    <div class="mobile-nav-backdrop"></div>
+    <div class="mobile-nav">
+        <div class="mobile-nav-header">
+            <div class="navbar-brand"><span class="brand-name">Jak</span><span class="brand-accent">Spezial</span></div>
+            <button class="mobile-nav-close" aria-label="Tutup menu navigasi">✕</button>
+        </div>
+        <ul class="mobile-nav-menu">
+            <li><a href="../index.html" class="mobile-nav-link">Beranda</a></li>
+            <li><a href="./profile.html" class="mobile-nav-link">Profil</a></li>
+            <li><a href="./administrasi.html" class="mobile-nav-link">Administrasi</a></li>
+            <li><a href="./wisata.html" class="mobile-nav-link">Wisata</a></li>
+            <li><a href="./kuliner.html" class="mobile-nav-link">Kuliner</a></li>
+            <li><a href="./transportasi.html" class="mobile-nav-link active">Transportasi</a></li>
+            <li><a href="./gallery.html" class="mobile-nav-link">Galeri</a></li>
+            <li><a href="./faq.html" class="mobile-nav-link">FAQ</a></li>
+            <li><a href="./about.html" class="mobile-nav-link">Tentang</a></li>
+        </ul>
+    </div>
+
+    <!-- 4. Page Header Banner -->
+    <header class="page-header-banner">
+        <div class="container reveal">
+            <span class="section-label">Mobilitas Urban</span>
+            <h1 style="font-size: 32px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 8px;">Jaringan Transit Publik Jakarta</h1>
+            <p style="color: var(--text-secondary); max-width: 600px; margin: 0 auto; font-size: 14.5px;">
+                Panduan moda transportasi umum bebas macet untuk keliling perkotaan Jakarta. Temukan data jam operasional dan tautan situs resmi masing-masing pengelola.
+            </p>
+        </div>
+    </header>
+
+    <!-- 5. Transit List Section -->
+    <section class="section">
+        <div class="container">
+            <!-- List injected dynamically by JS render.js -->
+            <div id="transport-list"></div>
+        </div>
+    </section>
+
+    <!-- 6. Shared Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-column">
+                <a href="../index.html" class="footer-brand"><span class="brand-name">Jak</span><span class="brand-accent">Spezial</span></a>
+                <p class="footer-text">JakSpezial adalah portal informasi satu pintu yang mengenalkan keindahan budaya, pariwisata, kuliner, dan tata kelola kota Daerah Khusus Ibukota Jakarta.</p>
+                <div class="footer-socials">
+                    <a href="https://facebook.com" class="footer-social-icon" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><img src="../assets/logos/facebook.svg" alt="Facebook" style="width: 18px; height: 18px;"></a>
+                    <a href="https://twitter.com" class="footer-social-icon" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><img src="../assets/logos/twitter.svg" alt="Twitter" style="width: 18px; height: 18px;"></a>
+                    <a href="https://instagram.com" class="footer-social-icon" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><img src="../assets/logos/instagram.svg" alt="Instagram" style="width: 18px; height: 18px;"></a>
+                    <a href="https://youtube.com" class="footer-social-icon" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><img src="../assets/logos/youtube.svg" alt="YouTube" style="width: 18px; height: 18px;"></a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h3 class="footer-title">Navigasi Utama</h3>
+                <ul class="footer-links">
+                    <li><a href="../index.html" class="footer-link">Beranda</a></li>
+                    <li><a href="./profile.html" class="footer-link">Profil Kota</a></li>
+                    <li><a href="./administrasi.html" class="footer-link">Administrasi</a></li>
+                    <li><a href="./wisata.html" class="footer-link">Destinasi Wisata</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3 class="footer-title">Informasi Lain</h3>
+                <ul class="footer-links">
+                    <li><a href="./kuliner.html" class="footer-link">Kuliner Betawi</a></li>
+                    <li><a href="./transportasi.html" class="footer-link">Transportasi Transit</a></li>
+                    <li><a href="./gallery.html" class="footer-link">Galeri Foto</a></li>
+                    <li><a href="./faq.html" class="footer-link">FAQ Accordion</a></li>
+                    <li><a href="./about.html" class="footer-link">Hubungi Kami</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3 class="footer-title">Kredensial Project</h3>
+                <div class="footer-dev-card">
+                    <div class="footer-dev-title">Tugas Universitas</div>
+                    <p class="footer-dev-text">Dikembangkan oleh Tim Mahasiswa Semester 2 Program Studi Informatika. Dibuat menggunakan HTML5, CSS3, dan Vanilla JavaScript murni tanpa bantuan framework eksternal.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container footer-bottom">
+            <p class="footer-copy">&copy; 2026 JakSpezial - Explore Jakarta Easily. Dibuat untuk tujuan edukasi pembelajaran.</p>
+            <ul class="footer-meta-links">
+                <li><a href="./about.html" class="footer-meta-link">Developer</a></li>
+                <li><a href="./faq.html" class="footer-meta-link">Syarat & Ketentuan</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <!-- 7. Back To Top Arrow -->
+    <button id="back-to-top" aria-label="Kembali ke atas">▲</button>
+
+    <!-- 8. Centralized Detail Modal Wrapper -->
+    <div id="detail-modal" class="modal-overlay" onclick="handleBackdropClick(event)">
+        <div class="modal-container">
+            <!-- Content Injected Dynamically by JS -->
+        </div>
+    </div>
+
+    <!-- Script Integrations -->
+    <script src="../js/data.js"></script>
+    <script src="../js/render.js"></script>
+    <script src="../js/search.js"></script>
+    <script src="../js/filter.js"></script>
+    <script src="../js/modal.js"></script>
+    <script src="../js/animation.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>
