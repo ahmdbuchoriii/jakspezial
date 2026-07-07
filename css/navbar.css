@@ -37,10 +37,7 @@
     font-size: 20px;
     font-weight: 700;
     color: var(--text-primary);
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    user-select: none;
+    margin-bottom: 16px;
 }
 
 .navbar:not(.navbar-scrolled):not(.navbar-static) .navbar-brand {
